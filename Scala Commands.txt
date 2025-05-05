@@ -1,0 +1,77 @@
+Scala Execution Steps:
+
+Step 0: Open the terminal
+Step 1: Install Java
+$ sudo apt-add-repository ppa:webupd8team/java
+$ sudo apt-get update
+$ sudo apt-get install oracle-java7-installer
+If you are asked to accept Java license terms, click on “Yes” and proceed. Once finished, let us check whether
+Java has installed successfully or not. To check the Java version and installation, you can type:
+$ java -version
+Step 2: Once Java is installed, we need to install Scala
+$ cd ~/Downloads
+$ wget http://www.scala-lang.org/files/archive/scala-2.11.7.deb
+$ sudo dpkg -i scala-2.11.7.deb
+$ scala –version
+
+To run any Scala program, you first need to compile it. “Scalac” is the compiler which takes source program
+as an argument and generates object files as output.
+Let’s start compiling your “HelloWorld” program using the following steps:
+1. For compiling it, you first need to paste this program into a text file then you need to save this program as
+HelloWorld.scala
+2. Now you need change your working directory to the directory where your program is saved
+3. After changing the directory you can compile the program by issuing the
+command. scalac HelloWorld.scala
+4. After compiling, you will get Helloworld.class as an output in the same directory. If you can see the file,
+you have successfully compiled the above program.
+Running Scala Program
+After compiling, you can now run the program using following command:
+scala HelloWorld
+
+Scala Viva Theory:
+Scala is a high-level programming language that combines object-oriented and functional programming.
+It runs on the JVM (Java Virtual Machine) and is fully interoperable with Java.
+
+Scala Basics Terms
+Here are definitions of the common Scala features , including `object`, `class`, `method`, and `trait`, in **simple terms**:
+---
+### 1. Class
+
+* A blueprint to create objects that can hold data and behavior.
+* Example: `class Person(val name: String)`
+
+###  2. Object
+
+* A singleton instance of a class (only one instance exists).
+* Used to hold utility methods or the main program.
+* Example: `object Hello { def greet() = println("Hi") }`
+
+### 3. Method
+
+* A reusable block of code that performs a task and can return a value.
+* Example: `def add(a: Int, b: Int): Int = a + b`
+
+### 4. Trait
+
+* Like an interface; used to define methods that a class must implement.
+* Can contain both abstract and concrete methods.
+* *xample: `trait Animal { def sound(): Unit }`
+
+### 5. Type Inference
+
+* Scala automatically figures out the data type of a variable.
+* Example: `val x = 5` (Scala knows `x` is an `Int`)
+
+### 6. Immutability
+
+* Variables declared with `val` cannot be changed once assigned.
+* Promotes safe and bug-free code.
+* Example: `val name = "Scala"`
+
+### 7. Functional Programming
+
+* Treats functions as values and allows higher-order functions.
+* Encourages writing code using functions instead of mutable state.
+* Example: `List(1, 2, 3).map(_ * 2)`
+
+
