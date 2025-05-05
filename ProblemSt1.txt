@@ -1,0 +1,58 @@
+import pandas as pd
+import numpy as np
+
+2. Description of the Data and Source
+Dataset Name: Titanic - Machine Learning from Disaster
+Description: This dataset contains information about the passengers aboard the Titanic, 
+including features such as age, sex, ticket class, and whether or not the individual survived.
+The dataset is commonly used for binary classification problems and predictive modeling.
+Source URL: Kaggle Titanic Dataset
+
+df = pd.read_csv("titanic.csv")  # assuming the file is in your working directory
+df.head()
+
+#Checking for missing values
+print(df.isnull().sum())
+
+#Basic Statistics
+print(df.describe(include='all'))#Quantitative + Categorical Variables
+                           
+ 
+# Dimensions of the DataFrame
+df.shape
+(891, 12)
+
+#Variable Description & Types
+df.dtypes
+
+#Convert Pclass (which is currently int64) into string type
+df['Pclass'] = df['Pclass'].astype(str)
+
+#Before:
+#Pclass    int64
+#After:
+#Pclass    object  # (because string type is stored as object in pandas)"""
+#Convert Categorical to Numerical Variables (3 Methods)
+
+#1.Label Encoding (Sex)
+df['Sex_encoded'] = df['Sex'].map({'male': 0, 'female': 1})
+#To print the newly created Sex_encoded column in your DataFrame after encoding, you can use:
+
+print(df['Sex_encoded'])
+
+
+#Or, to view it alongside the original Sex column for comparison:
+
+print(df[['Sex', 'Sex_encoded']])
+      
+[891 rows x 2 columns]
+#b. One-Hot Encoding (Embarked)
+df = pd.get_dummies(df, columns=['Embarked'], drop_first=True)
+print(df.head())
+      
+So, if:
+both are 0(False) → Embarked was C
+
+only Embarked_S = 1(True) → Embarked was S
+
+only Embarked_Q = 1(True) → Embarked was Q

@@ -1,0 +1,39 @@
+import scala.io.StdIn._
+
+object ArithmeticOperations {
+  def main(args: Array[String]): Unit = {
+    // Taking user input
+    print("Enter the first number: ")
+    val num1 = readDouble()  // Read the first number
+
+    print("Enter the second number: ")
+    val num2 = readDouble()  // Read the second number
+
+    // Perform operations and print results
+    println(s"Addition: ${num1 + num2}")
+    println(s"Subtraction: ${num1 - num2}")
+    println(s"Multiplication: ${num1 * num2}")
+    if (num2 != 0) {
+      println(s"Division: ${num1 / num2}")
+    } else {
+      println("Division: Cannot divide by zero")
+    }
+  }
+}
+
+
+
+
+// Common Features:
+// 1. Runs on JVM, interoperable with Java.
+// 2. Statically typed, ensuring type safety at compile time.
+// 3. Supports both functional and object-oriented paradigms.
+// 4. Rich library and collection support.
+
+// Unique Features:
+// 1. Type inference reduces the need for explicit type declaration.
+// 2. Immutable collections and functional programming encourage safer and more concise code.
+// 3. Case classes automatically generate methods like `equals`, `hashCode`, and `toString`.
+// 4. First-class functions allow higher-order functions, making Scala highly flexible.
+// 5. Traits, enabling mixin composition to enhance class functionality without inheritance.
+
